@@ -1,0 +1,55 @@
+
+<br><br><br><br>
+<div class="container">
+    <label>Please Mark The Selected Products</label>
+    <form  #productsubmitForm="ngForm"  (ngSubmit)="productsubmit(event)">
+        <table id="dcustomer" class="table table-hover table-bordered table-sm">
+            <tr>
+
+               <th></th>
+                <th>Product Title</th>
+                <th>Description</th>
+                <th>Model</th>
+                <th>Brand</th>
+                <th>Product Code</th>
+                <th>Part No</th>
+                <th>Pack Size</th>
+                <th>MOQ</th>
+                <th>HSN Code</th>
+                <th>GST</th>
+                <th>Quantity</th>
+                <th>UOM</th>
+                <th>Lead Time</th>
+            </tr >
+            <tr  *ngFor="let data of products">
+               
+                    <td>
+                        <input type="checkbox" name="{{data.id}}" id="{{data.id}}" (change)="checkLineitem($event,this.name)"/>
+                    </td>
+
+                 <td>{{data.product_title}}</td>
+                 <td>{{data.description}}</td>
+                 <td>{{data.model}}</td>
+                 <td>{{data.brand}}</td>
+                 <td>{{data.product_code}}</td>
+                 <td>{{data.part_number}}</td>
+                 <td>{{data.pack_size}}</td>
+                 <td>{{data.moq}}</td>
+                 <td>{{data.hsn_code}}</td>
+                 <td>{{data.gst}}</td>
+                 <td>{{data.quantity}}</td>
+                 <td>{{data.uom}}</td>
+                 <td>{{data.lead_time}}</td>
+            </tr>  
+        </table>
+        <button class="btn btn-success pull-right">Proceed</button> <br>
+    </form>
+</div>
+
+    <app-crm-footer></app-crm-footer>
+    <app-crm-header></app-crm-header>
+    
+   
+
+    
+  

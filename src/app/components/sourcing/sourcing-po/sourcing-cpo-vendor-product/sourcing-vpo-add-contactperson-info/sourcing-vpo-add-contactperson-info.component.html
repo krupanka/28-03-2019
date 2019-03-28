@@ -1,0 +1,86 @@
+<br><br><br>
+<div class="col-md-offset-2 col-md-7">  <!--table fields-->
+     <div class="well">
+        <label align="center">Supplier Contact Person Information </label>
+            <hr>
+         
+        <form [formGroup]="poForm"> 
+            <div class="example-container">
+                    <mat-form-field>
+                         <input matInput placeholder="Name" value="{{po_contact_info['vendor_contact_person']['name']}}" formControlName="name" [(ngModel)]="model.name">
+                    </mat-form-field>
+
+                     <mat-form-field>
+                            <input matInput placeholder="Mobile No1" formControlName="mobileNo1" value="{{po_contact_info['vendor_contact_person']['mobileNo1']}}" [(ngModel)]="model.mobileNo1">
+                     </mat-form-field>
+
+                     <mat-form-field>
+                            <input matInput placeholder="Mobile No2" formControlName="mobileNo2"  value="{{po_contact_info['vendor_contact_person']['mobileNo2']}}" [(ngModel)]="model.mobileNo2">
+                     </mat-form-field>
+
+                     <mat-form-field>
+                            <input matInput placeholder="Office Email 1" formControlName="email1" value="{{po_contact_info['vendor_contact_person']['email1']}}"  [(ngModel)]="model.email1" >
+                     </mat-form-field>
+
+                     <mat-form-field>
+                            <input matInput placeholder="Office Email 2" formControlName="email2" value="{{po_contact_info['vendor_contact_person']['email2']}}"  [(ngModel)]="model.email2" >
+                     </mat-form-field>
+                     
+                     <mat-chip-list>
+                     <mat-chip color="primary" selected (click)="submitsourcingvpoaddcontactpersoninfolist(event)">Confirm</mat-chip>
+                     </mat-chip-list>
+            </div>
+        </form>
+         
+              
+          <!----  <form #submitsourcingvpoaddcontactpersoninfolistForm="ngForm" (ngSubmit)="submitsourcingvpoaddcontactpersoninfolist(event)" class="form-signin" [formGroup]="poForm" >
+           <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group" [ngClass]="{'has-error':poForm.get('name').touched && poForm.get('name').invalid}">
+                    <label for="name" class="control-label">Name*</label>
+                    <input type="text" id="name" class="form-control" value="{{po_contact_info['vendor_contact_person']['name']}}" formControlName="name" [(ngModel)]="model.name">
+                    <span *ngIf="poForm.get('name').touched && poForm.get('name').invalid" class="help-block">Name can't be blank.</span>
+                </div>
+                </div>
+
+                <div class="col-sm-4">
+                <div class="form-group" [ngClass]="{'has-error':poForm.get('mobileNo1').touched && poForm.get('mobileNo1').invalid}">
+                    <label for="mobileNo1" class="control-label">Mobile No1*</label>
+                    <input type="text" id="mobileNo1" class="form-control" formControlName="mobileNo1" value="{{po_contact_info['vendor_contact_person']['mobileNo1']}}" [(ngModel)]="model.mobileNo1">
+                    <span *ngIf="poForm.get('mobileNo1').touched && poForm.get('mobileNo1').invalid" class="help-block">mobileNo1 can't be blank.</span>
+                </div>
+                </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="form-input" for="mobileNo2"> Mobil No 2 </label>
+                    <input type="text" class="form-control" id="mobileNo2" name="mobileNo2" formControlName="mobileNo2" value="{{po_contact_info['vendor_contact_person']['mobileNo2']}}"  [(ngModel)]="model.mobileNo2">
+                </div>
+               </div> 
+                     
+               <div class="col-sm-4"> 
+                <div class="form-group" [ngClass]="{'has-error':poForm.get('email').touched && poForm.get('email').invalid}">
+                    <label for="email" class="control-label">Office Email 1*</label>
+                    <input type="email1" id="email1" class="form-control" formControlName="email" value="{{po_contact_info['vendor_contact_person']['email1']}}"  [(ngModel)]="model.email1" >
+                    <span *ngIf="poForm.get('email').touched && poForm.get('email').hasError('required')" class="help-block">Office Email 1 can't be blank.</span>
+                    <span *ngIf="poForm.get('email').touched && poForm.get('email').hasError('email')"  class="help-block">Office Email 1 must be valid</span>
+                </div>
+               </div> 
+
+               <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="email2" class="control-label">Office Email ID 2 </label>
+                    <input type="email" class="form-control" id="email2" name="email2" formControlName="email2" value="{{po_contact_info['vendor_contact_person']['email2']}}" [(ngModel)]="model.email2">
+                </div>
+                </div>
+               </div>
+               <div class="row"> <button [disabled]="submitsourcingvpoaddcontactpersoninfolistForm.invalid" type="button" class="btn btn-success pull-right" (click)="submitsourcingvpoaddcontactpersoninfolist(event)">Save and Continue</button></div>
+                  
+                  </form>-->
+                
+     </div>
+    </div>
+ <app-sourcing-header></app-sourcing-header>
+<app-sourcing-footer></app-sourcing-footer>
+   
+

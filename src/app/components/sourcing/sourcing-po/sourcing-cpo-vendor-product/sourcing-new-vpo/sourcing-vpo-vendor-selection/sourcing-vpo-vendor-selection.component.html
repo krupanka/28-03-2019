@@ -1,0 +1,159 @@
+<app-sourcing-header></app-sourcing-header>
+<br><br>
+<h2 align="center">Sourcing New CPO Selection List</h2>
+<hr>
+
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">Sourcing New CPO Selection List </div>
+                 <div class="panel-body">
+                        <button type="button" class="btn btn-success btn-sm" style="float:right" (click)="openModalDialog()"><span class="glyphicon glyphicon-plus">ADD NEW</span></button>
+                        <div class="backdrop" [ngStyle]="{'display' :display}"></div>  
+                        <!--modal-->
+                        <div class="modal" tabindex="-1" role="dailog" [ngStyle]="{'display':display}">
+                                <!--modal-dialog-->
+                                <div class="modal-dialog" role="document">
+                                    <!--modal-conent-->
+                                         <div class="modal-content">
+                                             <!--modal-header-->
+                                             <div class="panel panel-default">
+                                                <div class="panel-heading text-center">New Contact-Person-Selection                                   
+                                                    <button type="button" class="close" (click)="closeModalDialog()">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <form > 
+                                                         <div class="example-container">
+                                                              <mat-form-field>
+                                                                   <input matInput placeholder="Name"  name="name" [(ngModel)]="model.name">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Location"  name="location" [(ngModel)]="model.location">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <textarea matInput placeholder="Address"  name="address" [(ngModel)]="model.address"></textarea>
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="City"  name="city" [(ngModel)]="model.city">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Pin"  name="pin" [(ngModel)]="model.pin">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="State"  name="state" [(ngModel)]="model.state">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Country"  name="country" [(ngModel)]="model.country">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Office Email1"  name="office_email1" [(ngModel)]="model.office_email1">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Office Email2"  name="office_email2" [(ngModel)]="model.office_email2">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Office phone1"  name="office_phone1" [(ngModel)]="model.office_phone1">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Office phone2"  name="office_phone2" [(ngModel)]="model.office_phone2">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Gst Number"  name="gst_number" [(ngModel)]="model.gst_number">
+                                                              </mat-form-field>
+                                                              
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Payment Term"  name="payment_term" [(ngModel)]="model.payment_term">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="advance_persentage"  name="advance_persentage" [(ngModel)]="model.advance_persentage">
+                                                              </mat-form-field>
+
+                                                              <mat-form-field>
+                                                                <input matInput placeholder="Inco Term"  name="inco_term" [(ngModel)]="model.inco_term">
+                                                              </mat-form-field>
+
+                                                              <button mat-raised-button color="primary" (click)="submitvpolist(event)">Confirm</button>
+                                                              
+                                                         </div>
+                                                    </form>
+                                                </div>
+                                            
+                                         </div>
+                                    </div> 
+                                </div>
+             </div><br><br>
+    <!--Table data-->
+     <table id="dcustomer" class="table table-hover table-bordered table-sm" width="100%">
+         <thead><!--table header-->
+             <tr>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Pin</th>
+                    <th>Country</th>
+                    <th>Office Email 1</th>
+                    <th>Office Email 2</th>
+                    <th>Office Phone 1</th>
+                    <th>Office Phone 2</th>
+                    <th>GST</th>
+                    <th>Payment Term</th>
+                    <th>Advance Persentage</th>
+                    <th>Inco Term</th>
+                    <th></th>
+                  </tr>
+         </thead>
+            <tr *ngFor="let data of sourcing_new_vpo">
+                 <td>
+                   <!---- <a href="sourcing/sourcing-po/souring-cpo-vendor-product/{{cpo_id}}/vendor/{{data.id}}/contact_person_selection">-->
+                    <input type="button" value="Select" class="glyphicon glyphicon-forward" style="color: blue" name="{{data.name}}" id="{{data.id}}" (click)="localstorage($event)" />
+                </td>
+                
+                <td>{{data.name}}</td>
+                <td>{{data.location}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.state}}</td>
+                <td>{{data.pin}}</td>
+                <td>{{data.country}}</td>
+                <td>{{data.office_email1}}</td>
+                <td>{{data.office_email2}}</td>
+                <td>{{data.office_phone1}}</td>
+                <td>{{data.office_phone2}}</td>
+                <td>{{data.gst_number}}</td>
+                <td>{{data.payment_term}}</td>
+                <td>{{data.advance_persentage}}</td>
+                <td>{{data.inco_term}}</td>
+                <td></td>
+             </tr>
+            
+       
+    </table> <br>
+</div>
+</div>
+
+
+
+  
+
+    
+    <app-sourcing-footer></app-sourcing-footer>
+   
+    
+   
+
+    
+  

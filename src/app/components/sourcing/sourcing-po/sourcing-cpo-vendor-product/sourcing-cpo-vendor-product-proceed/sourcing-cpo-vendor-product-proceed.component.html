@@ -1,0 +1,58 @@
+<app-sourcing-header></app-sourcing-header>
+<br><br><br><br><br>
+
+    
+
+     <!--After clicking the buttons open the model dialog using open/close event biniding methods-->
+     <button  class="block" type="btn btn-primary btn-block btn-lg" (click)="openModalDialog()">Mark as Ready For Releasing Order</button><br>
+        <div class="backdrop" [ngStyle]="{'display' :display}"></div>  
+        <!--modal-->
+     <div class="modal" tabindex="-1" role="dailog" [ngStyle]="{'display':display}">
+     <!--modal-dialog-->
+        <div class="modal-dialog" role="document">
+             <!--modal-conent-->
+             <div class="modal-content">
+                 <!--modal-header-->
+                <div class="panel panel-default">
+             <div class="panel-heading text-center">Do You Really Want to Mark as Ready For Releasing Order ?
+     <button type="button" class="close" (click)="closeModalDialog()">&times;</button>
+</div>
+<!--modal-body-->
+    <div class="modal-body">
+    </div>
+    
+<div class="modal-footer">
+    <button class="btn btn-success" (click)="market_ready_po(event)">Confirm</button>&nbsp;&nbsp;&nbsp;
+    
+</div>
+</div>
+</div>
+</div>
+</div><br><br><!--model-->
+
+<button  class="block" type="btn btn-primary btn-block btn-lg" (click)="openRequestModalDialog()">Request For Direct Buying Purchase</button><br>
+<div class="backdrop" [ngStyle]="{'display' :request_display}"></div>  
+<!--modal-->
+<div class="modal" tabindex="-1" role="dailog" [ngStyle]="{'display':request_display}">
+    <!--modal-dialog-->
+       <div class="modal-dialog" role="document">
+            <!--modal-conent-->
+            <div class="modal-content">
+                <!--modal-header-->
+               <div class="panel panel-default">
+            <div class="panel-heading text-center">Do You Really Want to Request For Direct Buying Purchase ?
+    <button type="button" class="close" (click)="closeRequestModalDialog()">&times;</button>
+</div>
+<!--modal-body-->
+   <div class="modal-body">
+       
+   </div>
+<div class="modal-footer">
+   <button class="btn btn-success" (click)="request_buying_purchase(event)">Confirm</button>&nbsp;&nbsp;&nbsp;
+ 
+</div>
+</div>
+</div>
+</div>
+</div><br><br><!--model-->
+<app-sourcing-footer></app-sourcing-footer>
