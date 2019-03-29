@@ -396,6 +396,26 @@ getSourcing_VPO_Details_pdf(po_no):Observable<[]>{
    });       
 }
 
+delete_VPO_List(cpo_id,vpo_id){
+ 
+  return this.http.post('/api/po_to_vendor/pending_cpo/'+cpo_id+'/vpo/'+vpo_id+'/remove_vpo/', //SourcingVpoLineitemEdit database API LInk
+  {
+    
+  },
+  {
+      headers: new HttpHeaders().set('Authorization','Token ' + localStorage.getItem('token'))// send to header
+   });   
+}
+postmark_po_releasing_complete(id){
+
+  return this.http.post('/api/po_to_vendor/pending_cpo/'+id+'/mark_as_complet/', //SourcingVpoLineitemEdit database API LInk
+  {
+    
+  },
+  {
+      headers: new HttpHeaders().set('Authorization','Token ' + localStorage.getItem('token'))// send to header
+   });   
+}
 }
 
 

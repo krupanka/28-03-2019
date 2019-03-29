@@ -64,6 +64,7 @@ import { SourcingVpoConfirmationComponent } from './components/sourcing/sourcing
 import { SourcingVpoReviewComponent } from './components/sourcing/sourcing-po/sourcing-cpo-vendor-product/sourcing-vpo-review/sourcing-vpo-review.component';
 import { SalesPreviewComponent } from './components/sales/sales-po/vpo-approval/sales-preview/sales-preview.component';
 import { SourcingCpoVendorProductProceedComponent } from './components/sourcing/sourcing-po/sourcing-cpo-vendor-product/sourcing-cpo-vendor-product-proceed/sourcing-cpo-vendor-product-proceed.component';
+import { SourcingProductVpoDeleteComponent } from './components/sourcing/sourcing-po/sourcing-cpo-vendor-product/sourcing-product-vpo-delete/sourcing-product-vpo-delete.component';
  
 
 
@@ -108,7 +109,7 @@ const routes:Routes=[
   { path:'sourcing/sourcing-po/:cpo_id/vpo/:vpo_id/lineitem/:lineitem_id/edit',component:SourcingVpoLineitemEditComponent },
   { path:'sourcing/po_to_vendor/pending_cpo/:cpo_id/vpo/:vpo_id/preview', component:SourcingVpoReviewComponent},
   { path:'sourcing/po_to_vendor/pending_cpo/:cpo_id/vpo/:vpo_id/proceed',component:SourcingCpoVendorProductProceedComponent},
-
+  { path :'sourcing/po_to_vendor/pending_cpo/:cpo_id/vpo/:vpo_id/remove_vpo',component:SourcingProductVpoDeleteComponent},
   { path:'sourcing/sourcing-po/sourcing-cpo-lineitem-edit', component:SourcingCpoLineitemEditComponent },
 
 //Sourcing NEW VPO

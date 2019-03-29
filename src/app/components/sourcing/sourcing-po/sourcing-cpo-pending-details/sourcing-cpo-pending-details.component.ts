@@ -26,7 +26,16 @@ export class SourcingCpoPendingDetailsComponent implements OnInit {
       console.log(data);
     })
   }
-  
+  mark_po_releasing_complete(event){
+    let id= this.route.snapshot.paramMap.get('sourcingdetail');
+    this.cpo_id=id;
+    this.PoVendorService.postmark_po_releasing_complete(id).subscribe(data=>{
+      console.log(data);
+      
+        window.alert(data);
+    
+  });
+  }
 }
 
 

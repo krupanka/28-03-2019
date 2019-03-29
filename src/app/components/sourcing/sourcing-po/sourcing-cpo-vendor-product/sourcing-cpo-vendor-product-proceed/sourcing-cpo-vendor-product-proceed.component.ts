@@ -38,7 +38,7 @@ export class SourcingCpoVendorProductProceedComponent implements OnInit {
      
       console.log(data);
       this.router.navigate(['sourcing/sourcing-po/'+cpo_id+'/souring-cpo-vendor-product']);
-     
+     window.alert(data);
     });
 
   }

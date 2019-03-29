@@ -35,7 +35,7 @@
             <td>{{data.quantity}}</td>
           </tr>         
      </table>
-     <button class="btn btn-success" style="float: left">Mark As PO Releasing Completed</button>
+     <button class="btn btn-success" style="float: left" (click)="mark_po_releasing_complete($event)">Mark As PO Releasing Completed</button>
      <a href="sourcing/sourcing-po/{{cpo_id}}/souring-cpo-vendor-product"> <button class="btn btn-success" style="float: right">Prepare PO</button></a>
                                                      
     </div>

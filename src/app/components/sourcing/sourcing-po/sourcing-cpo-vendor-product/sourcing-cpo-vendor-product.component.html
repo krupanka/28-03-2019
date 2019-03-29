@@ -13,7 +13,8 @@
                 <a href="sourcing/po_to_vendor/pending_cpo/{{cpo_id}}/vpo/{{offer.id}}/basic-info"> <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Asking Approval To Release PO">Prepare PO</button></a>&nbsp;&nbsp;
                   <a href="sourcing/po_to_vendor/pending_cpo/{{cpo_id}}/vpo/{{offer.id}}/preview"> <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Preview PO">Preview PO</button></a>&nbsp;&nbsp;
                   
-                  <input type="button" class="btn btn-success btn-sm" style="float: right" (click)="submitassignvendorlist($event)" data-toggle="tooltip" data-placement="top" name="{{offer.id}}" value="Abserve Unassigned selected lineitems" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                  <input type="button" class="btn btn-success btn-sm" style="float: right" (click)="submitassignvendorlist($event)" data-toggle="tooltip" data-placement="top" name="{{offer.id}}" value="Abserve Unassigned selected lineitems" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                  <a href="sourcing/po_to_vendor/pending_cpo/{{cpo_id}}/vpo/{{offer.id}}/remove_vpo"> <input type="button" class="btn btn-danger btn-sm"   data-toggle="tooltip" data-placement="top"  value="Delete VPO" />   </a>
                      
                   <br><br>
                   <!--Table-->
