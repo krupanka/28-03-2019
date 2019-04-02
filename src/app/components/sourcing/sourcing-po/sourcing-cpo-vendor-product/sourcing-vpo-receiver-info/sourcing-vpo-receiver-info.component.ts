@@ -84,7 +84,9 @@ submit_reciver_info(event){
 
     if (this.model.receiver_dept==""||this.model.receiver_dept==null)
     {
+
       window.alert("Receiver Dept should not be empty");
+
       return;
     }
   }
