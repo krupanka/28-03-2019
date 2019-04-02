@@ -28,7 +28,16 @@ export class SourcingProductVpoDeleteComponent implements OnInit {
     let vpo_id=this.route.snapshot.paramMap.get('vpo_id');  
     this.vpo_id = vpo_id; 
     this.PoVendorService.delete_VPO_List(cpo_id,vpo_id).subscribe((data)=>{  // delete method
-      console.log(data);
+      
+      console.log(data['Message']);
+
+      if (data['Message']!='Success'){
+        window.alert(data['Message']);
+      }
+      else{
+        window.alert(data['Message']);
+
+      }
       this.router.navigate(['sourcing/sourcing-po/'+cpo_id+'/souring-cpo-vendor-product']);
      
     })

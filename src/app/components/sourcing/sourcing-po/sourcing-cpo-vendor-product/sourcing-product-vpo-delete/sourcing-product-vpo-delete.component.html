@@ -1,4 +1,30 @@
 <app-sourcing-header></app-sourcing-header>
 <app-sourcing-footer></app-sourcing-footer><br><br><br>
-<button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Confirm VPO Delete" (click)="delete_vpo_list($event)">Confirm</button>&nbsp;&nbsp;
+<button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Confirm VPO Delete" style="float:left" (click)="openModalDialog()">Mark as Ready For Releasing Order</button><br>
+<div class="backdrop" [ngStyle]="{'display' :display}"></div>  
+<!--modal-->
+<div class="modal" tabindex="-1" role="dailog" [ngStyle]="{'display':display}">
+<!--modal-dialog-->
+<div class="modal-dialog" role="document">
+     <!--modal-conent-->
+     <div class="modal-content">
+         <!--modal-header-->
+        <div class="panel panel-default">
+     <div class="panel-heading text-center">Do You Really Want to Mark As PO Releasing Completed ?
+<button type="button" class="close" (click)="closeModalDialog()">&times;</button>
+</div>
+<!--modal-body-->
+<div class="modal-body">
+
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-success " style="float: left" (click)="delete_vpo_list($event)">Confirm</button>
+
+</div>
+</div>
+</div>
+</div>
+</div><br><br><!--model-->
+&nbsp;&nbsp;
 <a href="sourcing/sourcing-po/{{cpo_id}}/souring-cpo-vendor-product"><button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Cancel">Cancel</button></a>&nbsp;&nbsp;

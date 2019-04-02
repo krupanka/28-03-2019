@@ -35,7 +35,35 @@
             <td>{{data.quantity}}</td>
           </tr>         
      </table>
-     <button class="btn btn-success" style="float: left" (click)="mark_po_releasing_complete($event)">Mark As PO Releasing Completed</button>
      <a href="sourcing/sourcing-po/{{cpo_id}}/souring-cpo-vendor-product"> <button class="btn btn-success" style="float: right">Prepare PO</button></a>
+     <!--After clicking the buttons open the model dialog using open/close event biniding methods-->
+     <button type="button" class="btn btn-success btn-sm" style="float:left" (click)="openModalDialog()">Mark as Ready For Releasing Order</button><br>
+        <div class="backdrop" [ngStyle]="{'display' :display}"></div>  
+        <!--modal-->
+     <div class="modal" tabindex="-1" role="dailog" [ngStyle]="{'display':display}">
+     <!--modal-dialog-->
+        <div class="modal-dialog" role="document">
+             <!--modal-conent-->
+             <div class="modal-content">
+                 <!--modal-header-->
+                <div class="panel panel-default">
+             <div class="panel-heading text-center">Do You Really Want to Mark As PO Releasing Completed ?
+     <button type="button" class="close" (click)="closeModalDialog()">&times;</button>
+</div>
+<!--modal-body-->
+    <div class="modal-body">
+   
+    </div>
+    
+<div class="modal-footer">
+  <button class="btn btn-success " style="float: left" (click)="mark_po_releasing_complete($event)">Confirm</button>
+    
+</div>
+</div>
+</div>
+</div>
+</div><br><br><!--model-->
+   
+    
                                                      
     </div>

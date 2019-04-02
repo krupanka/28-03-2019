@@ -11,13 +11,17 @@ export class SourcingCpoPendingDetailsComponent implements OnInit {
   cpopendingdetails:object[]=[];
   vendor_id="";
   cpo_id = "";
-  public name : string ;
+  display='none';
+ 
+ 
   constructor(private PoVendorService:PoVendorService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     let id= this.route.snapshot.paramMap.get('sourcingdetail');
     this.cpo_id=id;
     this.CPOPendingDetails(id)
+   
+    
   }
   CPOPendingDetails(id){
     
@@ -26,16 +30,34 @@ export class SourcingCpoPendingDetailsComponent implements OnInit {
       console.log(data);
     })
   }
+  
   mark_po_releasing_complete(event){
     let id= this.route.snapshot.paramMap.get('sourcingdetail');
     this.cpo_id=id;
     this.PoVendorService.postmark_po_releasing_complete(id).subscribe(data=>{
-      console.log(data);
-      
-        window.alert(data);
+     
+      console.log(data['Message']);
+
+      if (data['Message']!='Success'){
+        window.alert(data['Message']);
+      }
+      else{
+        window.alert(data['Message']);
+
+      }
+      this.router.navigate(['sourcing/sourcing-po/sourcing-cpo-pending-list']);
+       
     
   });
   }
+  openModalDialog()
+  {
+    this.display='block';
+  }
+  closeModalDialog()
+  {
+    this.display='none';
+    }
 }
 
 

@@ -36,9 +36,17 @@ export class SourcingCpoVendorProductProceedComponent implements OnInit {
      
     this.PoVendorService.PostSourcing_Cpo_Market_ReadyPO(cpo_id,vpo_id).subscribe((data)=>{ 
      
-      console.log(data);
+      console.log(data['Message']);
+
+      if (data['Message']!='Success'){
+        window.alert(data['Message']);
+      }
+      else{
+        window.alert(data['Message']);
+
+      }
       this.router.navigate(['sourcing/sourcing-po/'+cpo_id+'/souring-cpo-vendor-product']);
-     window.alert(data);
+    
     });
 
   }
@@ -48,7 +56,15 @@ export class SourcingCpoVendorProductProceedComponent implements OnInit {
     let vpo_id=this.route.snapshot.paramMap.get('vpo_id');
     this.vpo_id=vpo_id;
     this.PoVendorService.PostSourcing_Cpo_buying_PurchasePO(cpo_id,vpo_id).subscribe((data)=>{ 
-      console.log(data);
+      console.log(data['Message']);
+
+      if (data['Message']!='Success'){
+        window.alert(data['Message']);
+      }
+      else{
+        window.alert(data['Message']);
+
+      }
       this.router.navigate(['sourcing/sourcing-po/'+cpo_id+'/souring-cpo-vendor-product']);
     });
   }
