@@ -14,6 +14,7 @@ import { PoVendorService} from 'src/app/services/sourcing/po/po-vendor.service';
 export class SourcingProductVpoDeleteComponent implements OnInit {
   cpo_id="";
   vpo_id="";
+  display='none';
   constructor(private formBuilder: FormBuilder,private PoVendorService:PoVendorService,private router:Router,private route:ActivatedRoute,) {  }  
 
   ngOnInit() {
@@ -43,4 +44,13 @@ export class SourcingProductVpoDeleteComponent implements OnInit {
     })
 
   }
+  openModalDialog()
+  {
+    this.display='block';
+  }
+  closeModalDialog()
+  {
+    this.display='none';
+    }
 }
+
